@@ -19,3 +19,28 @@ Usa REST, base de dados relacional SQL . No servidor serão utilizados a framewo
 desenvolvimento Web Flask [2] e o motor de base de dados SQL sqlite [3]. O programa
 cliente utilizará o módulo requests [4] para implementar a interação cliente/servidor baseada
 em HTTP
+
+Defs:
+• Viagem (round-trip) – um conjunto de dois voos directos - ida e volta – entre dois
+aeroportos, com um custo associado assim como um identificador único
+• Voo (leg) - uma travessia entre dois aeroportos, com aeroporto de origem e destino,
+com hora e data de partida e de chegada, com uma duração associada assim como
+uma (ou várias) companhia(s) aérea(s) que opera(m) o voo.
+• IATA - código universal identificador de um aeroporto
+
+Esquema da BD
+Deverá criar e eventualmente popular uma base de dados como a representada pelo diagrama
+da Figura 2.
+A tabela roundtrips conterá as viagens encontradas, definidas pelo seu voo de ida e regresso
+(id_leg0 e id_leg1) assim como o seu custo. A Figura 3 dá um exemplo de três entradas nesta
+tabela. Cada um destes voos individuais está definido na tabela legs, particularmente pelos
+códigos de aeroportos do local de partida e chegada (IATA), pela data e hora de partida e
+chegada (DDMMYYYY HHMM), pela duração em minutos do voo, e por fim pelo código da
+companhia aérea (um, ou mais separados por espaço) que opera o voo. Um exemplo de
+algumas entradas nesta tabela está presente na Figura 4. Para suportar a resolução de códigos
+da operadora em nomes por extenso, deverá preencher a tabela airlines.
+Haverá ainda uma tabela weather que possuirá as últimas previsões de tempo para vários
+locais e respectivos dias. Além da condição do tempo (Sol, Limpo, Chuva, etc.), a previsão
+temperatura mínima e máxima deverá estar também patente.
+De forma a serem inequívocas as localizações que o Cliente, a tabela weather e a tabela legs
+utilizam, deverá ser criada uma tabela locations
