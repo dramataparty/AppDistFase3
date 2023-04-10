@@ -1,0 +1,21 @@
+O objetivo geral do presente projeto será concretizar um serviço Web – Escapadinha
+Solarenga – para procura de locais com bom tempo para fazer férias de curta duração, algures
+por uma capital da Europa. O cliente deverá ser capaz de informar o servidor de:
+
+    1. A capital de onde irá partir (cidade base).
+    2. Qual o preço máximo que está disposto a gastar na sua viagem de avião (ida-e-volta).
+    Há apenas 5 requisitos:
+    1. A previsão meteorológica no destino deverá ser Tempo Limpo / Sol durante +2 dias.
+    2. Apenas considerar viagens com voos diretos (entre cidade base e destino de férias).
+    3. A viagem dura exactamente 4 dias (exº partida a dia 1/Jan, regresso a dia 4/Jan).
+    4. O regresso acontecerá no máximo em 14 dias a partir do dia da pesquisa (pesquisando
+    dia 1/Jan, o regresso será no máximo dia 14/Jan).
+    5. Apenas 1 adulto irá viajar, no plano Economy (sem extras).
+    Por uma questão de simplicidade, iremos reduzir as pesquisas a 10 capitais, nomeadamente:
+    Lisboa, Madrid, Paris, Dublin, Bruxelas, Liubliana, Amsterdão, Berlim, Roma, Viena.
+
+
+Usa REST, base de dados relacional SQL . No servidor serão utilizados a framework de
+desenvolvimento Web Flask [2] e o motor de base de dados SQL sqlite [3]. O programa
+cliente utilizará o módulo requests [4] para implementar a interação cliente/servidor baseada
+em HTTP
