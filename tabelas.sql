@@ -23,6 +23,7 @@ create table weather(
     condition TEXT,
     mintemp_c TEXT,
     maxtemp_c TEXT,
+    foreign key location references locations(name)
 );
 
 create table locations(
