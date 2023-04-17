@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/aluno/<int:id>', methods = ["GET"])
 def aluno(id = None):
     if request.method == "GET":
-    # Ler dados do aluno com id na base de dados
+    # Ler dados do aluno com id na base de dados(mudar para adequar ao projeto)
         r = make_response('Dados do aluno %d' % id)
         r.status_code = 200
         return r

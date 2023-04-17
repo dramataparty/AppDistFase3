@@ -7,18 +7,18 @@ import sqlite3
 from os.path import isfile
 def connect_db(dbname):
     db_is_created = isfile(dbname) # Existe ficheiro da base de dados?
-    connection = sqlite3.connect('notas.db')
+    connection = sqlite3.connect('notas.db') #DF - criamos a DB onde?
     cursor = connection.cursor()
     if not db_is_created:
         cursor.execute("CREATE TABLE notas (numero_aluno INTEGER, ano TEXT,\
         cadeira TEXT, nota INTEGER);")
         connection.commit()
     return connection, cursor
-um_registo = (123, '2021/2022', 'AD', 20)
+um_registo = (123, '2021/2022', 'AD', 20)      #Mudar 
 varios_registos=[ (1000,'2021/2022','AD',10),
 (1000,'2021/2022','ITW',10),
 (1001,'2021/2022','AD',17),
-(1000,'2021/2022','ITW',17)]
+(1000,'2021/2022','ITW',17)]   #ESTES valores para apropriados para o novo contexto
 if __name__ == '__main__':
     conn, cursor = connect_db('notas.db')
     cursor.execute('INSERT INTO notas VALUES (?, ?, ?, ?)', um_registo)
