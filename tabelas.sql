@@ -8,12 +8,13 @@ arr_datetime TEXT,
 duration_min numeric(2),
 airline_codes TEXT,
 FOREIGN KEY(dep_IATA) REFERENCES locations(IATA) ON DELETE CASCADE,
-FOREIGN KEY(arr_IATA) REFERENCES locations(IATA) ON DELETE CASCADE
+FOREIGN KEY(arr_IATA) REFERENCES locations(IATA) ON DELETE CASCADE,
+foreign key airline_codes references airlines(code) on delete cascade
 );
 
 create table airlines(
     code TEXT(2) primary key,
-    name TEXT
+    name TEXT,
 );
 
 create table weather(
@@ -23,7 +24,7 @@ create table weather(
     condition TEXT,
     mintemp_c TEXT,
     maxtemp_c TEXT,
-    foreign key location references locations(name)
+    foreign key(location) references locations(name)
 );
 
 create table locations(
@@ -40,8 +41,8 @@ create table roundtrips(
     wea_name text,
     id_leg0 text,
     id_leg1 text
-    FOREIGN KEY id_leg0 REFERENCES legs(id) ON DELETE CASCADE,
-    FOREIGN KEY id_leg1 REFERENCES legs(id) ON DELETE CASCADE
+    FOREIGN KEY(id_leg0) REFERENCES legs(id) ON DELETE CASCADE,
+    FOREIGN KEY(id_leg1) REFERENCES legs(id) ON DELETE CASCADE
 );
 
 
