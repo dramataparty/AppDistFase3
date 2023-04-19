@@ -22,7 +22,7 @@ if __name__ == '__main__':
     conn.commit()
     cursor.executemany('INSERT INTO legs VALUES (?, ?, ?, ?,?,?)', varios_registos)
     conn.commit()
-    cursor.execute('SELECT * FROM legss') # Fazer query e obter todos
+    cursor.execute('SELECT * FROM legs') # Fazer query e obter todos
     todos = cursor.fetchall() # os resultados
     print ("Todos: ", todos)
     cursor.execute('SELECT * FROM legs') # Fazer query e obter um a um
